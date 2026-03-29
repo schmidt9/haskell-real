@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Conditions
 
 main :: IO ()
-main = someFunc
+main = putStrLn (checkLocalhost "localhost") 
