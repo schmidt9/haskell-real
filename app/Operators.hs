@@ -1,13 +1,16 @@
 module Operators where
 
-isEqualTo :: Int -> Int -> Bool
-isEqualTo x y = x == y
+(|+|) :: Int -> Int -> Int
+x |+| y = abs x + abs y
 
--- if isEqualTo code1 code2 then ... else ...
--- where code1 = 123
--- code2 = 124
+sumAbs :: Int -> Int -> Int
+sumAbs x y = x |+| y
 
--- as infix:
--- if code1 `isEqualTo` code2 then ... else ...
--- where code1 = 123
--- code2 = 124
+eq :: Int -> Int -> Bool
+eq x y = x == y
+
+isEqualTo1 :: Int -> Int -> Bool
+isEqualTo1 = eq -- same as isEqualTo1 x y = eq x y
+
+isEqualTo2 :: Int -> Int -> Bool
+isEqualTo2 x y = x `eq` y

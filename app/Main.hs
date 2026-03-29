@@ -3,4 +3,8 @@ module Main where
 import Conditions
 
 main :: IO ()
-main = putStrLn (checkLocalhost "localhost") 
+main =
+  print
+    ( checkLocalhost "",
+      checkLocalhost "2"
+    )
