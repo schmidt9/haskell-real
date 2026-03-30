@@ -25,17 +25,17 @@ prependHeadToTail = getHead `prependTo` getTail
 
 -- find one item
 
-findPatientByName :: String -> [Patient] -> Patient
-findPatientByName _ [] = PatientUnknown -- if nothing found
+findPatientByName :: String -> [Patient] -> Maybe Patient
+findPatientByName _ [] = Nothing
 findPatientByName name (patient : others)
-  | name == firstName patient || name == lastName patient = patient
+  | name == firstName patient || name == lastName patient = Just patient
   | otherwise = findPatientByName name others
 
 findPatientByNameExample :: IO ()
 findPatientByNameExample =
   print
     ( findPatientByName
-        "Kor"
+        "Kir"
         [ Patient {firstName = "Alex", lastName = "Kar", email = ""},
           Patient {firstName = "Bob", lastName = "Stop", email = ""},
           Patient {firstName = "Alex", lastName = "Kor", email = ""}
