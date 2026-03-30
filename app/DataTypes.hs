@@ -42,12 +42,15 @@ getHost = "Host is " ++ host
 
 -- labeled params
 
-data Patient = Patient
-  { firstName,
-    lastName,
-    email ::
-      String
-  }
+data Patient
+  = Patient
+      { firstName,
+        lastName,
+        email ::
+          String
+      }
+  | PatientUnknown
+  deriving (Show) -- derive Show to use with print
 
 -- get email by label
 getPatientEmail :: Patient -> String
