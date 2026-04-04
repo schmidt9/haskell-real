@@ -35,10 +35,10 @@ cabal-version: 3.0
 -- Modules included in this executable, other than Main.
 -- LANGUAGE extensions used by modules in this package.
 -- other-extensions:
-name: real
 -- Other library packages from which modules are imported.
 -- Directories containing source files.
 -- Base language which the package is written in.
+name: real
 version: 0.1.0.0
 license:
   BSD-3-Clause
@@ -61,11 +61,12 @@ executable real
   main-is: Main.hs
   other-modules:
     Conditions
+    DataTypes
+    FileSystem
     Lambdas
     Lib
     Lists
     Operators
-    DataTypes
 
   build-depends: base ^>=4.18.3.0
   hs-source-dirs:
